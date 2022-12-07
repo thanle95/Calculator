@@ -6,7 +6,7 @@ import Operator from "./operator";
 export default function Control(){
     const {operators} = useContext(GameContext)
     return <><NewGame></NewGame>
-    {operators.map((op)=> <Operator op={op}></Operator>)}
+    {operators.map((op)=> <Operator key={op.label} op={op}></Operator>)}
     
     </>
 }

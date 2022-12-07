@@ -1,3 +1,7 @@
+import { useContext } from "react"
+import { GameContext } from "../../../context/gameContext"
+
 export default function Current(){
-    return <div className="screen-item ">Current</div>
+    const {currentResult} = useContext(GameContext)
+    return <div className="screen-item ">Current : {currentResult}</div>
 }
