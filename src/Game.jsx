@@ -24,6 +24,8 @@ function Game() {
     setCurrentResult,
     operators,
     setOperators,
+    gameEnd,
+    setGameEnd
   };
   return (
     <GameContext.Provider value={value}>

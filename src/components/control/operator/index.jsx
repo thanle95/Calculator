@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { GameContext } from "../../../context/gameContext";
 
 export default function Operator({ op }) {
@@ -12,8 +12,9 @@ export default function Operator({ op }) {
     if(checkGameEnd(newMoves, current))
         setGameEnd(true)
   };
+  // useEffect(()=>{},[moves])
   const checkGameEnd = (moves, current) => {
-    if (moves === 0 || current !== goal) {
+    if (moves === 0 && current !== goal) {
         handleLose();
         return true;
     }
@@ -21,12 +22,15 @@ export default function Operator({ op }) {
         handleWin()
         return true;
     };
+    return false
   };
   const handleWin = () => {
      //if wins, show steps, ask new game
+     alert("wins")
   };
   const handleLose = () => {
       //if loses, reset
+      alert("lose")
   };
   return (
     <button className="control " onClick={handleClick}>
