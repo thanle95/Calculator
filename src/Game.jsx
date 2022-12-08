@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Game.css";
+import "./Game.scss";
 import Control from "./components/control";
 import Screen from "./components/screen";
 import { GameContext } from "./context/gameContext";
@@ -25,13 +25,15 @@ function Game() {
     operators,
     setOperators,
     gameEnd,
-    setGameEnd
+    setGameEnd,
   };
   return (
     <GameContext.Provider value={value}>
       <div className="App">
-        <Screen></Screen>
-        <Control></Control>
+        <div className="container">
+          <Screen></Screen>
+          <Control></Control>
+        </div>
       </div>
     </GameContext.Provider>
   );
