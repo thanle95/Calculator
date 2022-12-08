@@ -16,6 +16,7 @@ export default function NewGame() {
     //random operators array
     //nếu lenght operators = moves mức easy
     //mức khó hơn thì operators > moves
+    // hiển thị modal chọn độ khó của game
     const operators = Array.from({ length: opt.numberOfMoves }, () => {
       const op = pickArrayRandom(ops);
       return op(randomInt(...opt.operatorRange));
