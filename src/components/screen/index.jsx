@@ -6,8 +6,11 @@ import Current from "./current";
 export default function Screen() {
   return (
     <div className="screen">
-      <Moves></Moves>
-      <Goal></Goal>
+      <div className="top">
+        <Moves></Moves>
+        <Goal></Goal>
+      </div>
+
       <Current></Current>
     </div>
   );

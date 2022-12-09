@@ -9,6 +9,7 @@ export default function Operator({ op }) {
     setCurrentResult(current);
     const newMoves = moves - 1;
     setMoves(newMoves);
+    //lưu lại bước đã đi, để disable nút đó trên giao diện
     if(checkGameEnd(newMoves, current))
         setGameEnd(true)
   };

@@ -13,14 +13,14 @@ export default function NewGame() {
       // ...options,
     };
     const ops = Object.values(allOperators);
-    //random operators array
-    //nếu lenght operators = moves mức easy
-    //mức khó hơn thì operators > moves
+    // random operators array
+    // nếu lenght operators = moves mức easy
+    // mức khó hơn thì operators > moves
     // hiển thị modal chọn độ khó của game
     const operators = Array.from({ length: opt.numberOfMoves }, () => {
       const op = pickArrayRandom(ops);
       return op(randomInt(...opt.operatorRange));
-    });
+    });             
     opt.steps = [...new Array(opt.numberOfMoves)].fill(0).map((a,index)=> index)
     
     shuffledArray(opt.steps)
@@ -29,7 +29,7 @@ export default function NewGame() {
     const goal = 
     // opt.steps.reduce((sum, cur)=> {sum + operators[cur].func(sum)}, opt.initResult) 
     
-    Array.from({ length: opt.numberOfMoves }).reduce((goal, curr, index) => {
+    Array.from({ length: opt.numberOfMoves }).reduce((goal, _curr, index) => {
       const op = operators[opt.steps[index]];
 
       return op.func(goal);
@@ -37,13 +37,14 @@ export default function NewGame() {
     setInitResult(opt.initResult)
     setCurrentResult(opt.initResult)
     setGoal(goal)
+    // số moves cho phép lớn hơn số moves thực tế, tuỳ độ khó
     setMoves(opt.numberOfMoves + randomInt(0,3))
     setOperators(operators)
     // console.log({opt, operators,goal})
   };
   return (
     <div className="control ">
-      <button onClick={generate}>new Game</button>
+      <button onClick={generate}>new </button>
     </div>
   );
 }
